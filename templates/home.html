@@ -1,0 +1,9 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}Home - My Site{% endblock %}
+
+{% block content %}
+    <h2 style="margin-bottom: 20px;">Games</h2>
+    <a class="primary-btn" href="{% url 'add_game' %}">Add Game</a>
+    {% include 'components/game_component.html' %}
+{% endblock %}

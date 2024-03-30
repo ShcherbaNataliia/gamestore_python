@@ -1,0 +1,12 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}Home - My Site{% endblock %}
+
+{% block content %}
+    <h2>{{ publisher.name }}</h2>
+    <p>{{ publisher.description }}</p>
+    <a class="primary-btn" target=”_blank” href="{{ publisher.website }}">Site</a>
+    <a class="primary-btn" href="{% url 'delete_publisher' publisher.id %}">Delete publisher</a>
+    <a class="primary-btn" href="{% url 'update_publisher' publisher.id %}">Update publisher</a>
+        {% include 'components/game_component.html' with games=publisher.game_set.all %}
+{% endblock %}

@@ -1,0 +1,27 @@
+<div class="items-collection">
+    {% for game in games %}
+        <div class="item">
+            <a href="{% url 'game_detail' game.id %}">
+                {% if game.image %}
+                    <img src="{{ game.image.url }}" alt="{{ game.title }}" width="200"
+                         style="border-radius: 15px;">
+                {% else %}
+                    {% load static %}
+                    <img src="{% static 'placeholder.jpeg' %}" alt="{{ game.title }}" width="200"
+                         style="border-radius: 15px;">
+                {% endif %}
+                <p class="game-type">{{ game.type }}</p>
+                <p>{{ game.title }}</p>
+                {% if game.discount and game.discount > 0 %}
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-around;">
+                        <p class="discount">-{{ game.discount }}%</p>
+                        <small style="text-decoration: line-through">₴{{ game.price }}</small>
+                        <p>₴{{ game.discount_price }}</p>
+                    </div>
+                {% else %}
+                    <p>₴{{ game.price }}</p>
+                {% endif %}
+            </a>
+        </div>
+    {% endfor %}
+</div>

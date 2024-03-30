@@ -1,0 +1,43 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}Home - My Site{% endblock %}
+
+{% block content %}
+    <div class="game-container">
+        <div>
+            {% if game.image %}
+                <img src="{{ game.image.url }}" alt="{{ game.title }}">
+            {% endif %}
+        </div>
+        <div class="desc-container">
+            <h2>{{ game.title }}</h2>
+            {% if game.discount and game.discount > 0 %}
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
+                        <small style="text-decoration: line-through; margin-right: 10px;">₴{{ game.price }}</small>
+                        <p>₴{{ game.discount_price }}</p>
+                    </div>
+                {% else %}
+                    <p>₴{{ game.price }}</p>
+                {% endif %}
+            <hr style="border-top: 1px solid white;">
+            <p>{{ game.description }}</p>
+            <p>Release Date: {{ game.release_date }}</p>
+            <div>
+                <h5 style="margin-bottom: 20px;">Categories</h5>
+                {% for category in game.categories.all %}
+                    <a class="nested-value" href="{% url 'category_detail' category.id %}"> {{ category.name }}</a>
+                {% endfor %}
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h5 style="margin-bottom: 20px; margin-top: 20px;">Publisher</h5>
+                <a class="nested-value" href="{% url 'publisher_detail' game.publisher.id %}"> {{ game.publisher.name }}</a>
+            </div>
+            <button class="light-btn">Order</button>
+            <br>
+            <div style="display: flex;">
+            <a class="primary-btn" href="{% url 'delete_game' game.id %}">Delete Game</a>
+            <a class="primary-btn" href="{% url 'update_game' game.id %}">Update Game</a>
+                </div>
+        </div>
+    </div>
+{% endblock %}

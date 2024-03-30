@@ -1,0 +1,161 @@
+body {
+    background-color: #0D171F;
+    color: white;
+    font-family: 'Montserrat';
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+}
+
+.logo {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-top:20px;
+}
+
+nav {
+    background-color: #15202c;
+    border-radius: 15px;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    height: 40vw;
+    flex-direction: column;
+}
+
+.primary-btn {
+    font-family: 'Montserrat';
+    text-decoration: none;
+    color: #a6aab0;
+    background-color: #15202c;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    width: fit-content;
+}
+
+.primary-btn:hover {
+    color: white;
+    background-color: #1C2C3B;
+}
+
+.light-btn {
+    font-family: 'Montserrat';
+    text-decoration: none;
+    color:#101115;
+    background-color:#ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    width: fit-content;
+}
+
+.games-container {
+border-top-left-radius: 80px 80px;
+border-top-right-radius: 80px 80px;
+margin-left: 20px;
+padding-top: 200px;
+background-image: linear-gradient(to top, #0D171F, rgba(117, 19, 93, 0)), 
+url("league-legends.jpeg"); 
+   background-size: 100%; 
+}
+
+.main-container {
+    display: flex;
+}
+
+.items-collection {
+    display:flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.item {
+    margin: 10px;
+    padding: 10px;
+}
+
+.item a {
+    text-decoration: none;
+    color: white;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: max-content;
+    margin-top: 20px;
+}
+
+
+.item-link {
+    text-decoration: none;
+    color: white;
+    border-bottom: solid #a6aab0 1px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+}
+
+.item-link:hover {
+        background-color: #1C2C3B;
+}
+
+.discount {
+    background-color: #2276c8;
+    padding: 5px;
+    border-radius: 5px;
+    width: 45px;
+}
+
+.game-type {
+    background-color:#1b2c3b;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    width: 80px;
+    text-align: center;
+    color: #a6aab0;
+    margin-top: 10px;
+}
+
+.btn-collection {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+
+/* Game detail page */
+.game-container img {
+    width: 30vw;
+    border-radius: 30px;
+}
+
+.game-container {
+    margin-left: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.desc-container {
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 35vw;
+}
+
+.nested-value {
+    text-decoration: none;
+    color: #a6aab0;
+    background-color: #15202c;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 15px;
+    margin: 5px;
+    width: auto;
+}

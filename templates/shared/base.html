@@ -1,0 +1,31 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>   
+</head>
+<body style="display: flex">
+<header>
+    <!-- Header content -->
+</header>
+<nav>
+    <div class="logo">
+        {% load static %}
+        <div><img src={% static 'game-icon.png' %} alt="game" width="60" style="margin-right: 10px; margin-left: 15px;"></div>
+        <h3>Gamestore</h3>
+    </div>
+    <a class="primary-btn" href={% url 'home' %}>Home</a>
+    <a class="primary-btn" href="{% url 'publishers' %}">Publishers</a>
+    <a class="primary-btn" href="{% url 'categories' %}">Categories</a>
+</nav>
+<main style="margin-left: 20px; margin-top: 20px; position: relative;">
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>
