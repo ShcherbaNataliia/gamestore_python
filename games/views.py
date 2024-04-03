@@ -67,6 +67,15 @@ class GameUpdateView(ObjectUpdateMixin, UpdateView):
     pk_url_kwarg = 'game_id'
     success_url = reverse_lazy('game_detail')
 
+    def form_valid(self, form):
+        game = form.save(commit=False)
+        game.save()
+        return redirect('game_detail', game_id=game.id)
+
+    def get_object(self, queryset=None):
+        game_id = self.kwargs.get('game_id')
+        return get_object_or_404(Game, pk=game_id)
+
 
 class PublisherCreateView(CreateView):
     model = Publisher
