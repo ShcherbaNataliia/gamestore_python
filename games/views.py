@@ -48,6 +48,9 @@ class GameDetailView(ObjectDetailMixin, DetailView):
     template_name = 'game/game_detail.html'
     context_object_name = 'game'
     pk_url_kwarg = 'game_id'
+    def get_object(self, queryset=None):
+        game_id = self.kwargs.get('game_id')
+        return get_object_or_404(Game.objects.prefetch_related('categories', 'publisher'), pk=game_id)
 
 
 class GameDeleteView(ObjectDeleteMixin, DeleteView):
