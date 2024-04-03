@@ -43,7 +43,7 @@ class GameCreateView(CreateView):
     success_url = reverse_lazy('home')
 
 
-class GameDetailView(ObjectDetailMixin, DetailView):
+class GameDetailView(DetailView):
     model = Game
     template_name = 'game/game_detail.html'
     context_object_name = 'game'
